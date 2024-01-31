@@ -16,9 +16,16 @@ print(areas_pis[:3])
 print(areas_pis[3:])
 #Imprimir el total de l'àrea de les dues habitacions
 print(areas_pis[areas_pis.index("Habitació1")+1]+areas_pis[areas_pis.index("Habitació2")+1])
-#Modificar l'àrea del lacabo i imprimir la nova list area
-print()
+#Modificar l'àrea del lavabo i imprimir la nova list area
+areas_pis[areas_pis.index("Lavabo")+1] = 9.87
+print(areas_pis[areas_pis.index("Lavabo")+1])
 #Afegir l'àrea de "pati interior" i 2.78 a les últimes posicions. Imprimir la nova list
-print()
+areas_pis.append("Pati interior")
+areas_pis.append(2.78)
+print(areas_pis[1:])
 #Imprimir el total de l'àrea del pis
-print()
+area_total = 0
+for area in areas_pis:
+    if (type(area) == float or type(area) == int):
+        area_total+= area
+print(area_total)
