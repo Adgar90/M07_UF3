@@ -1,9 +1,6 @@
-word1 = input("Insert first word: ")
-word2 = input("Insert second word: ")
+words = input("Insert two words: ")
 
-tupla = tuple(word1)
-tupla += tuple(word2)
-
+tupla = tuple(words.replace(" ", ""))
 myDict = {}
 
 for letter in tupla:
