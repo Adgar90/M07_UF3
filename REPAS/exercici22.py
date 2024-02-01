@@ -12,29 +12,37 @@ les següents especificacions:
     e) El text de cada etiqueta serà de la vostra elecció.
 """
 import xml.etree.ElementTree as ET
+
+#Variables amb values per omplir l'XML
+noms = ['Adria', 'Oscar', 'Gemma', 'Roger', 'Juanma']
+cognoms = ['Garcia', 'Perez', 'Garrigosa', 'Sobrino', 'Sanchez']
+emails = ['adria@iticbcn.cat', 'oscar@iticbcn.cat', 'gemma@iticbcn.cat',  'roger@iticbcn.cat', 'juanma@iticbcn.cat']
+dnis = ['11111111A', '22222222B', '33333333C', '44444444D', '55555555E']
+
+#Funcio que crea un arxiu XML
 def creaXML():
     #Creem element root --> students
     students = ET.Element('students')
     #Creem els child del element root
-    for i in range(1,6):
+    for i in range(0,5):
         #Creació child student
         student = ET.SubElement(students, 'student')
 
         #Creació child Name i assignació de valor
         name = ET.SubElement(student, "name")
-        name.text = "Nom "+str(i)
+        name.text = noms[i]
 
         #Creació child Surname i assignació de valor
         surname = ET.SubElement(student, "surname")
-        surname.text = "Cognom "+str(i)
+        surname.text = cognoms[i]
 
         #Creació child Email i assignació de valor
         email = ET.SubElement(student, "email")
-        email.text = "Email "+str(i)
+        email.text = emails[i]
 
         #Creació child Dni i assignació de valor
         dni = ET.SubElement(student, "dni")
-        dni.text = "Dni "+str(i)
+        dni.text = dnis[i]
 
     ET.indent(students)
     ET.ElementTree(students).write('Students.xml')
