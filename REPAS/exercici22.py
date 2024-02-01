@@ -45,7 +45,7 @@ def creaXML():
         dni.text = dnis[i]
 
     ET.indent(students)
-    ET.ElementTree(students).write('Students.xml')
+    ET.ElementTree(students).write('REPAS/Students.xml')
     ET.dump(students)
 
 creaXML()

@@ -14,8 +14,11 @@ pages = ['416', '592','433','576']
 
 #Funció que crea e insereix 4 'book' amb les seves propietats
 def createJson():
+    #Creem la llista per guardar els nostres objectes
     books = []
+    #Iteració rang 4
     for i in range(0,4):
+        #Creem i afegim un book en cada iteració
         books.append(
         { 
             "book": {
@@ -25,8 +28,11 @@ def createJson():
                 "pages":pages[i]
             }
         })
+    #Escrivim el nostre .json
     with open("REPAS/books.json", "w") as file:
         json.dump(books, file, indent=2)
-    print(books)
+    with open("REPAS/books.json", "r") as file:
+        #Mostrem el value de books
+        print(json.dumps(json.load(file), indent=2))
 
 createJson()
