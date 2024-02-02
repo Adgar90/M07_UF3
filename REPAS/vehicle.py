@@ -38,7 +38,7 @@ class Vehicle:
         self.vel_maxima = new_vel_maxima
 
     #Funció per mostrar totes les dades del vehicle
-    def to_string(self):
+    def parts(self):
         return f"""
             Marca: {self.marca}
             Model: {self.model}
@@ -63,5 +63,5 @@ class Vehicle:
 vehicle = Vehicle( "Audi", "Q7","White", 4, 232, 200)
 
 #Prints de comprovació
-print(vehicle.to_string())
+print(vehicle.parts())
 print(vehicle.to_dict())
