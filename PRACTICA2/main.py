@@ -7,13 +7,13 @@ from delete import *
 
 #Funció que emula switch statement
 def switch(option):
-    if option=="1":
-        insertMovie()
-    elif option=="2":
+    if option=="1":   #[ 1 INSERT ]
+        insertMovie() 
+    elif option=="2": #[ 2 SELECT ]
         selectMovie()
-    elif option=="3":
+    elif option=="3": #[ 3 UPDATE ]
         updateMovie()
-    elif option=="4":
+    elif option=="4": #[ 4 DELETE ]
         deleteMovie()
     else:
         return
@@ -21,15 +21,14 @@ def switch(option):
 try:
     #Preguntem a l'usuari si vol crear la taula
     response = input('Vols crear la taula? (yes/no): ')
-    if (response == "yes"):
+    if (response == "yes" or response == "y"):
         createTable()
     #Iteració per execució de commandes SQL
     while True:
-        command = input('INDICA LA COMANDA (0 per sortir) -> 1 INSERT 2 SELECT 3 UPDATE 4 DELETE : ')
+        command = input('INDICA LA COMANDA(0 per sortir) -> [ 1 INSERT ] [ 2 SELECT ] [ 3 UPDATE ] [ 4 DELETE ] : ')
         if (command == "0"): break
         switch(command)
 except(Exception, psycopg2.Error) as error:
     print("Error", error)
 finally:
     conn.close()
-
