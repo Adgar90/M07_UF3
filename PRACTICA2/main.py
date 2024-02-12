@@ -1,3 +1,4 @@
+#Imports de la connexió i del CRUD
 from connection import *
 from create_table import * 
 from create import *
@@ -17,7 +18,8 @@ def switch(option):
         deleteMovie()
     else:
         return
-
+#Usem try-except-finally per assegurar que fa la connexió correctament.
+#En cas de no ser així, ho capturem i en ambdós casuistiques, tanquem la connexió.
 try:
     #Preguntem a l'usuari si vol crear la taula
     response = input('Vols crear la taula? (yes/no): ')
